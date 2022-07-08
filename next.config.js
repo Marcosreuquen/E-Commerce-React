@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withSvgr = require("next-svgr");
 
-module.exports = nextConfig
+const nextConfig = withSvgr({
+  reactStrictMode: true,
+  experimental: {
+    styledComponents: true,
+  },
+  images: {
+    domains: [
+      "cdn.contentful.com",
+      "assets.vercel.com",
+      "images.ctfassets.net",
+      "dl.airtable.com",
+    ],
+    formats: ["image/avif", "image/webp"],
+  },
+});
+
+module.exports = nextConfig;
