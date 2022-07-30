@@ -4,8 +4,7 @@ import { FeaturedProducts } from "components/featuredProducts";
 import { Welcome } from "components/welcome";
 import { apiCalls as api } from "lib/api";
 
-const Home: NextPage = () => {
-  api.test().then((r) => console.log(r));
+const Home: NextPage = ({ featured }: any) => {
   return (
     <div>
       <Head>
@@ -15,10 +14,17 @@ const Home: NextPage = () => {
       </Head>
       <div style={{ paddingTop: 84 }}>
         <Welcome />
-        <FeaturedProducts />
+        <FeaturedProducts products={featured} />
       </div>
     </div>
   );
 };
 
 export default Home;
+
+export async function getServerSideProps(context: any) {
+  const { results } = await api.product.featured();
+  return {
+    props: { featured: results }, // will be passed to the page component as props
+  };
+}
