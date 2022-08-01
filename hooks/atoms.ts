@@ -1,8 +1,8 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
 const { persistAtom } = recoilPersist({
-  key: "recoil-persist", // this key is using to store data in local storage
+  key: "recoil-persist",
 });
 
 export const tokenState = atom({

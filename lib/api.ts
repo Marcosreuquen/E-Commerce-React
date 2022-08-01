@@ -1,5 +1,5 @@
 const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import axios, { AxiosInstance } from "axios";
 
 const fetcher: AxiosInstance = axios.create({
   baseURL: API_URL,

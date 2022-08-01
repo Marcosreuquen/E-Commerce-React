@@ -36,7 +36,7 @@ export const LoaderContainer = styled.div`
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #fff;
+    background: #222;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   & > div:nth-child(1) {

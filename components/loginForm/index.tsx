@@ -1,5 +1,5 @@
 import { FormFlex } from "components/searchBox/styled";
-import { useMe, useTokenValue } from "hooks";
+import { useMe } from "hooks";
 import { apiCalls } from "lib/api";
 import { useRouter } from "next/router";
 import { useState } from "react";

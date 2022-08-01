@@ -1,22 +1,22 @@
-import { ViewHeight } from "ui/sections";
-import { Title } from "ui/texts";
 import { FormFlex } from "components/searchBox/styled";
-import { Label } from "ui/textfield";
-import { Button } from "ui/button";
 import { useTokenValue, useUserData } from "hooks";
-import { useForm, Controller } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { Button } from "ui/button";
+import { ViewHeight } from "ui/sections";
+import { Label } from "ui/textfield";
+import { Title } from "ui/texts";
 
 export const ProfileForm = () => {
   const [me, setMe] = useUserData();
   const token = useTokenValue();
   const router = useRouter();
 
-  useState(() => {
+  useEffect(() => {
     if (!token) router.replace("/signin");
-  });
+  }, [token]);
   const { register, handleSubmit, control } = useForm({
     defaultValues: me,
   });

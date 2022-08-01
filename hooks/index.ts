@@ -1,10 +1,9 @@
 import { apiCalls } from "lib/api";
 import { useRouter } from "next/router";
-import useSWR from "swr";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import useSWRImmutable from "swr/immutable";
 import { paginationState, queryState, tokenState, userData } from "./atoms";
-import { useEffect, useState } from "react";
 
 export function usePagination() {
   const [pagination, setPagination] = useRecoilState(paginationState);
