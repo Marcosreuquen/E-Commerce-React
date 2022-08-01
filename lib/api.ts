@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api"; //"https://backend-ecommerce-six.vercel.app/api";
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 const fetcher: AxiosInstance = axios.create({
